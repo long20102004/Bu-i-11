@@ -9,8 +9,6 @@
    - ViewGroup
    - Layout
    - Event Handling
-   - Widgets
-
 ----
 
 
