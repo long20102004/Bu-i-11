@@ -25,7 +25,7 @@ SOLID là một nguyên lý thiết kế phần mềm, bao gồm 5 nguyên lý c
 
 Tại bài này, ta chỉ tập trung vào 3 nguyên lý đầu tiên để phù hợp với đối tượng người đọc.
 
-![JVM](img/img.png)
+![JVM](img/image.png)
 
 ## Lí do nên áp dụng các nguyên tắc SOLID
 
@@ -40,7 +40,7 @@ Tại bài này, ta chỉ tập trung vào 3 nguyên lý đầu tiên để phù
 
 ## 1.1. Single Responsibility Principle: Quy tắc trách nhiệm đơn lẻ
 
-![JVM](img/img-1.png)
+![JVM](/img/image-1.png)
 
 ## Quy tắc trách nhiệm đơn lẻ (SRP)
 
@@ -50,19 +50,19 @@ Tại bài này, ta chỉ tập trung vào 3 nguyên lý đầu tiên để phù
 
 Hãy thử xem một class sau:
 
-![JVM](img/img-2.png)
+![JVM](/img/image-2.png)
 
 - Việc cho toàn bộ các phương thức gộp vào 1 class NguoiChoi như này đã vi phạm quy tắc, thực hiện rất nhiều thay đổi chỉ trong 1 class như lấy dữ liệu từ database, chuyển sang json để trả về, di chuyển nhân vật, …. `Sau này khi nâng cấp thêm chức năng, class này ngày càng phình to ra.` Khiến cho việc bảo trì, nâng cấp, test, …. trở lên khó khăn hơn sau này.
 
 `Thay vì vậy, ta có thể chuyển thành như sau`
 
-![JVM](img/img3.png)
+![JVM](/img/image-3.png)
 
-![JVM](img/img4.png)
+![JVM](/img/image-4.png)
 
-![JVM](img/img5.png)
+![JVM](/img/image-5.png)
 
-![JVM](img/img6.png)
+![JVM](/img/image-6.png)
 
 - Lúc này mỗi class sẽ độc lập hơn và các luồng hoạt động cũng sẽ rõ ràng hơn, khi có lỗi xảy ra hay cần nâng cấp chức năng, bạn có thể dễ dàng sửa đổi vào các class trong 1 luồng chứ không phải thay đổi hay thêm mọi thứ vào 1 class và khiến chúng phình to hơn nữa.
 `Tuy số lượng class nhiều hơn những việc sửa chữa sẽ đơn giản hơn, dễ dàng tái sử dụng hơn, class ngắn hơn nên cũng ít bug hơn.`
@@ -71,7 +71,7 @@ Một số ví dụ về nguyên tắc SRP cần xem xét có thể cần đư�
 
 ## 1.2. Open/Closed Principle: Quy tắc mở đóng
 
-![JVM](img/img7.png)
+![JVM](/img/image-7.png)
 
 Nguyên tắc này được phát biểu như sau:
 
@@ -88,14 +88,14 @@ Nguyên tắc này được phát biểu như sau:
 
 Ví dụ:
 
-![JVM](img/img8.png)
+![JVM](/img/image-8.png)
 
 - Với cách thiết kế như trên, khi ta có các class con kế thừa từ class cha NguoiChoi, và cần kiểm tra xem class con có hệ là gì, hay ví dụ ta cần tạo thêm nhiều class con khác tương tự, `ta lại phải thêm nhiều if else vào class gốc`. 
 
 
 - `Thay vào đó, ta có thể thiết kế như sau:`
 
-![JVM](img/img9.png)
+![JVM](/img/image-9.png)
 
 - Lúc này, khi cần nâng cấp thêm nhiều hệ mới cho hệ thống, ta chỉ cần tạo các class con và sử dụng chức năng của class chính, không cần thực hiện trực tiếp vào class chính nữa.
 
@@ -103,14 +103,14 @@ Ví dụ:
 
 ## 1.3. Liskov Substitution Principle: Quy tắc thay thế Liskov
 
-![JVM](img/img10.png)
+![JVM](/img/image-10.png)
 
 - Barbara Liskov đã đưa ra nguyên tắc `Liskov Substitution Principle (LSP)` này. Nguyên tắc này cho rằng: trong kế thừa, các class con, `class kế thừa phải luôn có thể thay thế được class cha.` Tức là, nếu `class A kế thừa từ class B, thì mình luôn có thể sử dụng class A thay cho class B mà các chức năng không bị thay đổi.`
 
 Lấy ví dụ về hình vuông và hình chữ nhật
 
-![JVM](img/img11.png)
-![JVM](img/img12.png)
+![JVM](/img/image-11.png)
+![JVM](/img/image-12.png)
 
 
 - Như trong toán học được dạy ở các cấp dưới, ta hay được nghe là `“hình vuông cũng là hình chữ nhật”`, `Nhìn ví dụ` trên ta thấy mọi tính toán đều rất hợp lý. Do hình vuông có 2 cạnh bằng nhau, mỗi khi set độ dài 1 cạnh thì ta set luôn độ dài của cạnh còn lại bằng cách viết đè phương thức set chiều cao và set chiều rộng.
@@ -124,7 +124,7 @@ Lấy ví dụ về hình vuông và hình chữ nhật
 - Các phương thức bắt buộc kế thừa từ lớp cha ở lớp dẫn xuất nhưng không được sử dụng.
 - Phát sinh ngoại lệ trong phương thức của lớp dẫn xuất.
 
-![JVM](img/img13.png)
+![JVM](/img/image-13.png)
 
 - Câu chuyện về con vịt nhựa: Nếu bạn có một con vịt nhựa, nó là 1 con `vịt`, có thể kêu như vịt, nhưng mà lại cần pin, thì nó không thể thay thế cho con vịt thật được.
 
@@ -136,7 +136,7 @@ Lấy ví dụ về hình vuông và hình chữ nhật
 
 - Theo đó, để sửa vấn đề hình vuông – hình chữ nhật trên, ta `có thể` để chúng cùng kế thừa một class Shape như sau
 
-![JVM](img/img14.png)
+![JVM](/img/image-14.png)
 
 
 Lúc này việc set các chiều cao và chiều rộng thì chỉ class con mới có, và không vi phạm nguyên tắc LSP.
@@ -149,14 +149,14 @@ Lúc này việc set các chiều cao và chiều rộng thì chỉ class con m�
 
 ## 2.1. KISS
 
-![JVM](img/img15.png)
+![JVM](/img/image-15.png)
 - `KISS` là viết tắt của `Keep It Simple, Stupid`. Nguyên tắc này khuyến khích việc thiết kế và viết code đơn giản, dễ hiểu, dễ bảo trì. `KISS` không có nghĩa là viết code ngắn gọn, mà là viết code dễ hiểu, dễ bảo trì, dễ mở rộng.
 
 - Đôi lúc, ta nghĩ quá phức tạp vấn đề, ví dụ dự án nhỏ, nhưng ta lại áp dụng một số công nghệ quá phức tạp, như dùng những thư viện lớn cho chức năng nhỏ, làm dự án nặng hơn. Dùng thuật toán quá cao cho những vấn đề nhỏ, dần dà code trở nên phức tạp, khó bảo trì, khó mở rộng.
 
 ## 2.2. DRY
 
-![JVM](img/img16.png)
+![JVM](/img/image-16.png)
 
 - `DRY` là viết tắt của `Don’t Repeat Yourself`. Nguyên tắc này khuyến khích việc viết code không lặp lại, không viết lại những chức năng đã có sẵn. `DRY` giúp giảm thiểu lỗi, giảm thiểu thời gian viết code, giảm thiểu thời gian bảo trì.
 
@@ -164,7 +164,7 @@ Lúc này việc set các chiều cao và chiều rộng thì chỉ class con m�
 
 ## 2.3. YAGNI
 
-![JVM](img/img17.png)
+![JVM](/img/image-17.png)
 
 - `YAGNI` là viết tắt của `You Ain’t Gonna Need It`. Nguyên tắc này khuyến khích việc viết code dựa trên những yêu cầu thực tế, không viết những chức năng không cần thiết, không viết những chức năng dựa trên giả định.
 
@@ -173,7 +173,7 @@ Lúc này việc set các chiều cao và chiều rộng thì chỉ class con m�
 
 # 3. Mô hình MVC
 
-![JVM](img/img18.png)
+![JVM](/img/image-18.png)
 
 - `MVC` là viết tắt của `Model – View – Controller`. Đây là một mô hình thiết kế phần mềm, mô hình này chia ứng dụng thành 3 phần chính: `Model`, `View`, `Controller`.
 
@@ -185,7 +185,7 @@ Lúc này việc set các chiều cao và chiều rộng thì chỉ class con m�
 
 - Ví dụ mô hình MVC
 
-![JVM](img/img19.png)
+![JVM](/img/image-19.png)
 
 - Giả sử bạn đi vào 1 nhà hàng. Bạn sẽ không vào thẳng nhà bếp và tương tác với đồ ăn, thay vì đó, bạn sẽ xem các món ăn qua `thực đơn menu` - `View`
 - Sau khi bạn chọn món ăn, `nhân viên` sẽ lấy thực đơn và đưa vào bếp - `Controller`
@@ -199,7 +199,7 @@ Ta có thể thấy rằng, mỗi phần có một nhiệm vụ riêng, không p
 
 Ví dụ: Một chiếc xe
 
-![JVM](img/img20.png)
+![JVM](/img/image-20.png)
 
 - Ta tương tác với `View` là vô lăng, cần số, cần ga, cần phanh, …
 - Vô lăng, cần số, ... sẽ yêu cầu `Controller` là động cơ, các cấu phần bên trong xe, … phải đốt nhiên liệu đi, phải chuyển động, phải phanh, …
@@ -209,7 +209,7 @@ Ví dụ: Một chiếc xe
 - Window là cửa sổ chính của ứng dụng, nơi chứa tất cả các thành phần giao diện khác. Mỗi ứng dụng thường có ít nhất 1 Window.
 - Window chứa các View và ViewGroup bên trong nó, đồng thời xử lý các sự kiện từ hệ điều hành và người dùng.
 
-![JVM](img/img21.png)
+![JVM](/img/image-21.png)
 ## 4.2. View
 - View là các thành phần hiển thị giao diện trên màn hình mà người dùng có thể tương tác
 - Mỗi View thường có một hình dạng và kích thước cụ thể, và có thể hiển thị nội dung như văn bản, hình ảnh, hoặc các thành phần đồ họa khác.
@@ -221,12 +221,12 @@ Ví dụ: Một chiếc xe
   - **CheckBox**: Hộp kiểm cho phép người dùng chọn hoặc bỏ chọn một tùy chọn.
   - **RadioButton**: Nút chọn cho phép người dùng chọn một trong nhiều tùy chọn.
 
-![JVM](img/img22.png)
+![JVM](/img/image-22.png)
 ## 4.3. ViewGroup
 - ViewGroup là container chứa các View và quản lý các View con nằm trong nó.
 - ViewGroup cũng có thể chứa các ViewGroup khác
 
-![JVM](img/img23.png)
+![JVM](/img/image-23.png)
 ## 4.4. Layout
 - Layout tổ chức, quản lý kích thước, vị trí, bố cục của các View, ViewGroup một cách hiệu quả và có hệ thống giúp đảm bảo giao diện trực quan và dễ sử dụng cho người dùng.
 - Các loại Layout phổ biến:
@@ -236,7 +236,7 @@ Ví dụ: Một chiếc xe
   - **BorderLayout**: Sắp xếp các thành phần theo các vùng biên (Bắc, Nam, Đông, Tây, Trung tâm).
 
 
-![JVM](img/img24.png)
+![JVM](/img/image-24.png)
 
 Trong thực tế, khi làm sản phẩm ta sẽ phải kết hợp rất nhiều Layout với các kiểu khác nhau để bố cục được hài hòa và thuận mắt với người dùng
 ## 4.5. Event Handling
@@ -251,6 +251,6 @@ Trong thực tế, khi làm sản phẩm ta sẽ phải kết hợp rất nhiề
   - **Kích hoạt sự kiện**: Khi sự kiện xảy ra, Event Source sẽ tạo ra một Event Object và gọi phương thức của listener tương ứng.
   - **Xử lý sự kiện**: Listener sẽ thực hiện các hành động cần thiết để phản hồi lại sự kiện.
   
-![JVM](img/img25.png)
+![JVM](/img/image-25.png)
 
-![JVM](img/img26.png)
+![JVM](/img/image-26.png)
