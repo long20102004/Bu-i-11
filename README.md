@@ -40,7 +40,7 @@ Tại bài này, ta chỉ tập trung vào 3 nguyên lý đầu tiên để phù
 
 ## 1.1. Single Responsibility Principle: Quy tắc trách nhiệm đơn lẻ
 
-![JVM](img/img1.png)
+![JVM](img/img-1.png)
 
 ## Quy tắc trách nhiệm đơn lẻ (SRP)
 
@@ -50,7 +50,7 @@ Tại bài này, ta chỉ tập trung vào 3 nguyên lý đầu tiên để phù
 
 Hãy thử xem một class sau:
 
-![JVM](img/img2.png)
+![JVM](img/img-2.png)
 
 - Việc cho toàn bộ các phương thức gộp vào 1 class NguoiChoi như này đã vi phạm quy tắc, thực hiện rất nhiều thay đổi chỉ trong 1 class như lấy dữ liệu từ database, chuyển sang json để trả về, di chuyển nhân vật, …. `Sau này khi nâng cấp thêm chức năng, class này ngày càng phình to ra.` Khiến cho việc bảo trì, nâng cấp, test, …. trở lên khó khăn hơn sau này.
 
